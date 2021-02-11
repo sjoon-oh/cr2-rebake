@@ -4,7 +4,11 @@
 //
 
 //
+#pragma once
 
-#ifndef CR2
-#define CR2
-#endif
+#include "./CR2Config.h"
+#include "./CR2Type.h"
+#include "./CR2DegreeSubgraph.h"
+#include "./CR2Cluster.h"
+#include "./CR2Graph.h"
+#include "./CR2Manager.h"

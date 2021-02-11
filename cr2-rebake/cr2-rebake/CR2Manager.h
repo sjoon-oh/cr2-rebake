@@ -6,11 +6,11 @@
 //
 
 #pragma once
-#include "CR2Config.h"
+#include "./CR2Config.h"
 
 #ifdef CR2
-#include "CR2Type.h"
-#include "CR2Graph.h"
+#include "./CR2Type.h"
+#include "./CR2Graph.h"
 
 namespace cr2 {
 

@@ -6,15 +6,15 @@
 //
 
 #pragma once
-#include "CR2Config.h"
+#include "./CR2Config.h"
 
 #ifdef CR2
 
 #include <vector>
 #include <cstdio>
 
-#include "CR2Type.h"
-#include "CR2Cluster.h"
+#include "./CR2Type.h"
+#include "./CR2Cluster.h"
 
 namespace cr2 {
 
@@ -30,7 +30,7 @@ namespace cr2 {
             uint32_t num_intra_cluster = 0; // number of intra cluster
 
             // Graph information
-            std::vector<CR2Cluster<cr2::DENSE_TYPE>*> intra_cluster;
+            std::vector<cr2::CR2Cluster<cr2::DENSE_TYPE>*> intra_cluster;
             cr2::CR2Cluster<cr2::SPARSE_TYPE>* inter_cluster = nullptr; // Fixed to have only one.
 
 			uint32_t* degree_list[2] = {nullptr, nullptr};
@@ -53,11 +53,11 @@ namespace cr2 {
 
             //
             // Setter
-            unsigned setNumNodes(uint32_t argNodes) { num_nodes = argNodes; };
-            unsigned setNumEdges(uint32_t argEdges) { num_edges = argEdges; };
+            void setNumNodes(uint32_t argNodes) { num_nodes = argNodes; };
+            void setNumEdges(uint32_t argEdges) { num_edges = argEdges; };
             
             // unsigned setNumCluster(uint32_t argNumCluster) { num_cluster = argNumCluster; };
-            unsigned setNumIntraCluster(uint32_t argNumIC) { num_intra_cluster = argNumIC; };
+            void setNumIntraCluster(uint32_t argNumIC) { num_intra_cluster = argNumIC; };
 
             // Getter
             uint32_t getNumNodes() { return num_nodes; };

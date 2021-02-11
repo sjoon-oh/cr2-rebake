@@ -3,7 +3,7 @@
 // '21.02.07.
 //
 
-#include "CR2Cluster.h"
+#include "./CR2Cluster.h"
 #include "CR2Graph.h"
 
 #include "./util/platform_atomics.h"
@@ -113,11 +113,13 @@ unsigned cr2::CR2Graph::doBuildDegreeList(unsigned argDir) {
 	
 	degree_list[argDir] = new uint32_t[num_nodes];
 
-	for (uint32_t vertex_id = 0; vertex_id < num_nodes; ++i) {
+	for (uint32_t vertex_id = 0; vertex_id < num_nodes; ++vertex_id) {
 		degree_list[argDir][vertex_id] =
 			intra_cluster[CLUSTER_ID(vertex_id)]->getVertexDegrees(argDir, vertex_id)
 			+ inter_cluster->getVertexDegrees(argDir, vertex_id);
 	}
+
+	return 0;
 };
 
 
@@ -150,6 +152,6 @@ void cr2::CR2Graph::console_out_object_info() {
     printf("[cr2::CR2Graph]\n");
     printf("    num_nodes: %d\n", num_nodes);
     printf("    num_edges: %d\n", num_nodes);
-    printf("    num_intra_cluster: %d\n");
+    // printf("    num_intra_cluster: %d\n");
 }
 #endif

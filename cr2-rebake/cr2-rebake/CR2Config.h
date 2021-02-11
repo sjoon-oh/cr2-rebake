@@ -4,10 +4,15 @@
 //
 #pragma once
 
+#ifndef CR2
 #define CR2
+#endif
+
+#ifdef CR2
 #define CONSOLE_OUT_ENABLE
 
 #define CLUSTER_SIZE ((65536)) 
 
 #define PUSH
 #define PULL
+#endif

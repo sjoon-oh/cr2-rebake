@@ -3,8 +3,7 @@
 // '21.02.07.
 //
 
-#include "CR2.h"
-#include "CR2Manager.h"
+#include "./CR2Manager.h"
 #include "./util/platform_atomics.h"
 
 #include <algorithm>

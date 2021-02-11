@@ -19,18 +19,42 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cr2-accel\CommCR2Builder.h" />
-    <ClInclude Include="cr2-accel\Community.h" />
-    <ClInclude Include="cr2-accel\Config.h" />
-    <ClInclude Include="cr2-accel\CR2Graph.h" />
-    <ClInclude Include="cr2-accel\PartialGraph.h" />
-    <ClInclude Include="cr2-accel\SubGraph.h" />
-    <ClInclude Include="cr2-accel\util\CommandLineParser.h" />
-    <ClInclude Include="cr2-accel\util\CudaHelper.h" />
-    <ClInclude Include="cr2-accel\util\Edge.h" />
-    <ClInclude Include="cr2-accel\util\Parser.h" />
-    <ClInclude Include="cr2-accel\util\platform_atomics.h" />
-    <ClInclude Include="cr2-accel\util\Timer.h" />
+    <ClInclude Include="cr2-accel\CommCR2Builder.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\Community.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\Config.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\CR2Graph.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\PartialGraph.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\SubGraph.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\CommandLineParser.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\CudaHelper.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\Edge.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\Parser.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\platform_atomics.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\Timer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="cr2-rebake\CR2.h" />
     <ClInclude Include="cr2-rebake\CR2Cluster.h" />
     <ClInclude Include="cr2-rebake\CR2Config.h" />
@@ -38,18 +62,33 @@
     <ClInclude Include="cr2-rebake\CR2Graph.h" />
     <ClInclude Include="cr2-rebake\CR2Manager.h" />
     <ClInclude Include="cr2-rebake\CR2Type.h" />
-    <ClInclude Include="cr2-rebake\util\CommandLineParser.h" />
-    <ClInclude Include="cr2-rebake\util\CudaHelper.h" />
-    <ClInclude Include="cr2-rebake\util\Edge.h" />
-    <ClInclude Include="cr2-rebake\util\Parser.h" />
+    <ClInclude Include="cr2-rebake\util\CommandLineParser.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\CudaHelper.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\Edge.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\Parser.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="cr2-rebake\util\platform_atomics.h" />
-    <ClInclude Include="cr2-rebake\util\Timer.h" />
+    <ClInclude Include="cr2-rebake\util\Timer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cr2-accel\CommCR2Builder.cpp" />
-    <ClCompile Include="cr2-accel\PartialGraph.cpp" />
+    <ClCompile Include="cr2-accel\CommCR2Builder.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="cr2-accel\PartialGraph.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="cr2-rebake\CR2Graph.cpp" />
     <ClCompile Include="cr2-rebake\CR2Manager.cpp" />
+    <ClCompile Include="test-rebake.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cr-rebake.cd" />
