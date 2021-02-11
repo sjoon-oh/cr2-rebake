@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Comment CommentText="Types">
+    <Position X="0.5" Y="0.5" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Core">
+    <Position X="0.5" Y="4.402" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Getters and setters are ignored in this diagram&#xD;&#xA;">
+    <Position X="0.5" Y="8.505" Height="0.291" Width="3.128" />
+  </Comment>
+  <Comment CommentText="&lt;prefix&gt;&#xD;&#xA;do- : public interface&#xD;&#xA;alt- : private inner actions">
+    <Position X="0.5" Y="8.904" Height="0.65" Width="3.128" />
+  </Comment>
+  <Class Name="cr2::CR2Subgraph">
+    <Position X="13.75" Y="8.5" Width="2.5" />
+    <Members>
+      <Method Name="~CR2Subgraph" Hidden="true" />
+      <Method Name="getEdgeOffset" Hidden="true" />
+      <Method Name="getNodeOffset" Hidden="true" />
+      <Method Name="setEdgeOffset" Hidden="true" />
+      <Method Name="setNodeOffset" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAABAAQCAAAAAABEAAAAARAAAQAAgEAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2DegreeSubgraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2DegreeSubgraph">
+    <Position X="13.75" Y="11" Width="2.5" />
+    <Members>
+      <Method Name="~CR2DegreeSubgraph" Hidden="true" />
+      <Method Name="accessNumVirtualNodes" Hidden="true" />
+      <Method Name="getDegree" Hidden="true" />
+      <Method Name="getNumVirtualNodes" Hidden="true" />
+      <Method Name="setDegree" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAQAAABAAAAAAEAAAAAAAAEAAABEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2DegreeSubgraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Graph">
+    <Position X="4" Y="8.5" Width="3.75" />
+    <Members>
+      <Method Name="~CR2Graph" Hidden="true" />
+      <Method Name="console_out_object_info" Hidden="true" />
+      <Method Name="getDegreeList" Hidden="true" />
+      <Method Name="getNumCluster" Hidden="true" />
+      <Method Name="getNumEdges" Hidden="true" />
+      <Method Name="getNumInterClusterEdges" Hidden="true" />
+      <Method Name="getNumInterClusterVirtualNodes" Hidden="true" />
+      <Method Name="getNumIntraCluster" Hidden="true" />
+      <Method Name="getNumIntraClusterEdges" Hidden="true" />
+      <Method Name="getNumIntraClusterVirtualNodes" Hidden="true" />
+      <Method Name="getNumNodes" Hidden="true" />
+      <Method Name="setNumEdges" Hidden="true" />
+      <Method Name="setNumIntraCluster" Hidden="true" />
+      <Method Name="setNumNodes" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAEgAwAkEEAAEIAAAAJIAEAAQIEAAAACUQAUAAEAJA=</HashCode>
+      <FileName>cr2-rebake\CR2Graph.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="inter_cluster" />
+      <Field Name="intra_cluster" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="cr2::CR2Manager">
+    <Position X="4.5" Y="5" Width="2.75" />
+    <Members>
+      <Method Name="~CR2Manager" Hidden="true" />
+      <Method Name="console_out_object_info" Hidden="true" />
+      <Method Name="getNumVirtualNodes" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAgCAAAAQEAAAAAIAIEAAAIAAAECAAAQAQAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Manager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cr2_graph" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="cr2::Edge">
+    <Position X="7" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAgAAAABRAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Parser">
+    <Position X="0.5" Y="5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Typedef Name="cr2::CR2Parser::EdgeList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>cr2-rebake\util\CR2Parser.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAEQIAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>cr2-rebake\util\CR2Parser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Cluster&lt;T&gt;">
+    <Position X="9" Y="8.5" Width="3.25" />
+    <Members>
+      <Method Name="~CR2Cluster" Hidden="true" />
+      <Method Name="console_out_object_info" Hidden="true" />
+      <Method Name="getDegreeSubgraphSize" Hidden="true" />
+      <Method Name="getEdgeList" Hidden="true" />
+      <Method Name="getNumEdges" Hidden="true" />
+      <Method Name="getNumNodes" Hidden="true" />
+      <Method Name="getNumVirtualNodes" Hidden="true" />
+      <Method Name="getVertexDegrees" Hidden="true" />
+      <Method Name="getVertexList" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QCFIACBAkACAYAEAABACIAAEAAAAAAAADAQAADAAAiQ=</HashCode>
+      <FileName>cr2-rebake\CR2Cluster.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="degree_subgraph" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="9" Y="13.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AUIAEIEqCrBsEEBAAOMIAAAyAAUEQBIAhQkwggAFUkI=</HashCode>
+      <FileName>C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="cr2::DENSE_TYPE" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cr2::SPARSE_TYPE" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cr2::NODE" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cr2::EDGE" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="cr2::DEGREE">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAEAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="cr2::DIR">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

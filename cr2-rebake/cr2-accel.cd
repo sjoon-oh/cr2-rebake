@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CR2Graph">
+    <Position X="5.75" Y="0.5" Width="2.75" />
+    <Members>
+      <Method Name="getDenseEdgeListInComm_in" Hidden="true" />
+      <Method Name="getDenseEdgeListInComm_out" Hidden="true" />
+      <Method Name="getDenseTBsInComm_in" Hidden="true" />
+      <Method Name="getDenseTBsInComm_out" Hidden="true" />
+      <Method Name="getDenseVertexIDListInComm_in" Hidden="true" />
+      <Method Name="getDenseVertexIDListInComm_out" Hidden="true" />
+      <Method Name="getMaxID_in" Hidden="true" />
+      <Method Name="getMaxID_out" Hidden="true" />
+      <Method Name="getNumOfComms" Hidden="true" />
+      <Method Name="getNumOfDenseEdges" Hidden="true" />
+      <Method Name="getNumOfDenseEdgesInComm" Hidden="true" />
+      <Method Name="getNumOfDenseTBs_in" Hidden="true" />
+      <Method Name="getNumOfDenseTBs_out" Hidden="true" />
+      <Method Name="getNumOfDenseTBsInComm_in" Hidden="true" />
+      <Method Name="getNumOfDenseTBsInComm_out" Hidden="true" />
+      <Method Name="getNumOfDenseVirtualNodes_in" Hidden="true" />
+      <Method Name="getNumOfDenseVirtualNodes_out" Hidden="true" />
+      <Method Name="getNumOfDenseVirtualNodesInComm_in" Hidden="true" />
+      <Method Name="getNumOfDenseVirtualNodesInComm_out" Hidden="true" />
+      <Method Name="getNumOfEdges" Hidden="true" />
+      <Method Name="getNumOfNodes" Hidden="true" />
+      <Method Name="getNumOfSparseEdges" Hidden="true" />
+      <Method Name="getNumOfSparseTBs_in" Hidden="true" />
+      <Method Name="getNumOfSparseTBs_out" Hidden="true" />
+      <Method Name="getNumOfSparseVirtualNodes_in" Hidden="true" />
+      <Method Name="getNumOfSparseVirtualNodes_out" Hidden="true" />
+      <Method Name="getSparseEdgeList_in" Hidden="true" />
+      <Method Name="getSparseEdgeList_out" Hidden="true" />
+      <Method Name="getSparseTBs_in" Hidden="true" />
+      <Method Name="getSparseTBs_out" Hidden="true" />
+      <Method Name="getSparseVertexIDList_in" Hidden="true" />
+      <Method Name="getSparseVertexIDList_out" Hidden="true" />
+      <Method Name="printGraphInfo" Hidden="true" />
+      <Method Name="printNumOfVirtualNodes_dense" Hidden="true" />
+      <Method Name="printNumOfVirtualNodes_sparse" Hidden="true" />
+      <Method Name="printVirtualNodes_in" Hidden="true" />
+      <Method Name="printVirtualNodes_out" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Typedef Name="CR2Graph::DENSE_TYPE" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>cr2-accel\CR2Graph.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AwBAACAAAIAAiEOBCEAQgAmIEgiAAQRQgEAHU0AAhBo=</HashCode>
+      <FileName>cr2-accel\CR2Graph.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="denseGraph" />
+      <Field Name="sparseGraph" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DenseGraph">
+    <Position X="9.75" Y="3" Width="2.75" />
+    <Members>
+      <Method Name="getEdgeListInComm_in" Hidden="true" />
+      <Method Name="getEdgeListInComm_out" Hidden="true" />
+      <Method Name="getInDegrees" Hidden="true" />
+      <Method Name="getNumOfDenseEdges" Hidden="true" />
+      <Method Name="getNumOfEdgesInComm" Hidden="true" />
+      <Method Name="getNumOfTBs_in" Hidden="true" />
+      <Method Name="getNumOfTBs_out" Hidden="true" />
+      <Method Name="getNumOfTBsInComm_in" Hidden="true" />
+      <Method Name="getNumOfTBsInComm_out" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_in" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_out" Hidden="true" />
+      <Method Name="getNumOfVirtualNodesInComm_in" Hidden="true" />
+      <Method Name="getNumOfVirtualNodesInComm_out" Hidden="true" />
+      <Method Name="getOutDegrees" Hidden="true" />
+      <Method Name="getTBsInComm_in" Hidden="true" />
+      <Method Name="getTBsInComm_out" Hidden="true" />
+      <Method Name="getVertexIDListInComm_in" Hidden="true" />
+      <Method Name="getVertexIDListInComm_out" Hidden="true" />
+      <Method Name="printDenseEdges" Hidden="true" />
+      <Method Name="printNumOfVirtualNodes" Hidden="true" />
+      <Method Name="printVertex" Hidden="true" />
+      <Method Name="printVirtualNodes_in" Hidden="true" />
+      <Method Name="printVirtualNodes_out" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>sAAAAQAAkYABBAQhAACgAAEaAgAAAAgBAAAAkJAQAhA=</HashCode>
+      <FileName>cr2-accel\SubGraph.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="comms" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Edge">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAADgAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-accel\util\Edge.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartialGraph">
+    <Position X="16.5" Y="0.5" Width="3" />
+    <Members>
+      <Method Name="createThreadBlockInfo" Hidden="true" />
+      <Method Name="createThreadBlockInfo_in" Hidden="true" />
+      <Method Name="createThreadBlockInfo_out" Hidden="true" />
+      <Method Name="getDenseEdgeList_in" Hidden="true" />
+      <Method Name="getDenseEdgeList_out" Hidden="true" />
+      <Method Name="getDenseVertexIDList_in" Hidden="true" />
+      <Method Name="getDenseVertexIDList_out" Hidden="true" />
+      <Method Name="getInDegrees" Hidden="true" />
+      <Method Name="getNumOfEdges" Hidden="true" />
+      <Method Name="getNumOfTBs_in" Hidden="true" />
+      <Method Name="getNumOfTBs_out" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_in" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_out" Hidden="true" />
+      <Method Name="getOutDegrees" Hidden="true" />
+      <Method Name="getSparseEdgeList_in" Hidden="true" />
+      <Method Name="getSparseEdgeList_out" Hidden="true" />
+      <Method Name="getSparseVertexIDList_in" Hidden="true" />
+      <Method Name="getSparseVertexIDList_out" Hidden="true" />
+      <Method Name="getTBs_in" Hidden="true" />
+      <Method Name="getTBs_out" Hidden="true" />
+      <Method Name="printDenseEdgeList_out" Hidden="true" />
+      <Method Name="printDenseVertexIDList_out" Hidden="true" />
+      <Method Name="printNumOfVirtualNodes" Hidden="true" />
+      <Method Name="printThreadBlock_out" Hidden="true" />
+      <Method Name="printVirtualNodes_in" Hidden="true" />
+      <Method Name="printVirtualNodes_out" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>NBABAYgAgRJAIDZVDICpoGOaAkJAAUQAQUEWFJECBhg=</HashCode>
+      <FileName>cr2-accel\PartialGraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SparseGraph">
+    <Position X="9.75" Y="0.5" Width="2.75" />
+    <Members>
+      <Method Name="getEdgeList_in" Hidden="true" />
+      <Method Name="getEdgeList_out" Hidden="true" />
+      <Method Name="getInDegrees" Hidden="true" />
+      <Method Name="getNumOfSparseEdges" Hidden="true" />
+      <Method Name="getNumOfTBs_in" Hidden="true" />
+      <Method Name="getNumOfTBs_out" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_in" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_out" Hidden="true" />
+      <Method Name="getOutDegrees" Hidden="true" />
+      <Method Name="getTBs_in" Hidden="true" />
+      <Method Name="getTBs_out" Hidden="true" />
+      <Method Name="getVertexIDList_in" Hidden="true" />
+      <Method Name="getVertexIDList_out" Hidden="true" />
+      <Method Name="printNumOfVirtualNodes" Hidden="true" />
+      <Method Name="printVirtualNodes_in" Hidden="true" />
+      <Method Name="printVirtualNodes_out" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MAAAIQAAAAAAAATAAAiAAAECAgCAAAgAAQAAAJBIBhA=</HashCode>
+      <FileName>cr2-accel\SubGraph.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="partialGraph" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Community">
+    <Position X="13" Y="3" Width="2.25" />
+    <Members>
+      <Method Name="getEdgeList_in" Hidden="true" />
+      <Method Name="getEdgeList_out" Hidden="true" />
+      <Method Name="getInDegrees" Hidden="true" />
+      <Method Name="getNumOfEdges" Hidden="true" />
+      <Method Name="getNumOfTBs_in" Hidden="true" />
+      <Method Name="getNumOfTBs_out" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_in" Hidden="true" />
+      <Method Name="getNumOfVirtualNodes_out" Hidden="true" />
+      <Method Name="getOutDegrees" Hidden="true" />
+      <Method Name="getTBs_in" Hidden="true" />
+      <Method Name="getTBs_out" Hidden="true" />
+      <Method Name="getVertexIDList_in" Hidden="true" />
+      <Method Name="getVertexIDList_out" Hidden="true" />
+      <Method Name="printDenseEdges" Hidden="true" />
+      <Method Name="printNumOfVirtualNodes" Hidden="true" />
+      <Method Name="printTB" Hidden="true" />
+      <Method Name="printVertex" Hidden="true" />
+      <Method Name="printVirtualNodes_in" Hidden="true" />
+      <Method Name="printVirtualNodes_out" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MAAAoQABAAIAAARmAAiAAAECAgAAAQwBAQAAAJBIBhA=</HashCode>
+      <FileName>cr2-accel\Community.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="partialGraph" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CommCSRBuilder">
+    <Position X="2.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAQIAAAgABAAAAAAAAAAAAEAQAAACAAAAAAEA=</HashCode>
+      <FileName>cr2-accel\CommCR2Builder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AUIAEIEqCrBsEEBAAOMIAAAyAAUEQBIAhQkwggAFUkI=</HashCode>
+      <FileName>C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
