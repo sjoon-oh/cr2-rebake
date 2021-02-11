@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cr2-rebake">
+      <UniqueIdentifier>{176c4d20-4289-436d-9717-948db6b6624d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cr2-accel">
+      <UniqueIdentifier>{d47d37b6-7f13-4882-b903-164955e2af02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cr2-rebake\util">
+      <UniqueIdentifier>{f61ffea5-3d68-4e1a-b881-ac7e172456c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cr2-accel\util">
+      <UniqueIdentifier>{53ca54f9-1795-4084-a186-173b8b2fbe02}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cr2-accel\util\CommandLineParser.h">
+      <Filter>cr2-accel\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\CudaHelper.h">
+      <Filter>cr2-accel\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\Edge.h">
+      <Filter>cr2-accel\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\Parser.h">
+      <Filter>cr2-accel\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\platform_atomics.h">
+      <Filter>cr2-accel\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\util\Timer.h">
+      <Filter>cr2-accel\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\CommCR2Builder.h">
+      <Filter>cr2-accel</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\Community.h">
+      <Filter>cr2-accel</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\Config.h">
+      <Filter>cr2-accel</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\CR2Graph.h">
+      <Filter>cr2-accel</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\PartialGraph.h">
+      <Filter>cr2-accel</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-accel\SubGraph.h">
+      <Filter>cr2-accel</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\CommandLineParser.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\CudaHelper.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\Edge.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\Parser.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\platform_atomics.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\util\Timer.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2Cluster.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2Config.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2DegreeSubgraph.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2Graph.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2Manager.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+    <ClInclude Include="cr2-rebake\CR2Type.h">
+      <Filter>cr2-rebake</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cr2-accel\CommCR2Builder.cpp">
+      <Filter>cr2-accel</Filter>
+    </ClCompile>
+    <ClCompile Include="cr2-accel\PartialGraph.cpp">
+      <Filter>cr2-accel</Filter>
+    </ClCompile>
+    <ClCompile Include="cr2-rebake\CR2Graph.cpp">
+      <Filter>cr2-rebake</Filter>
+    </ClCompile>
+    <ClCompile Include="cr2-rebake\CR2Manager.cpp">
+      <Filter>cr2-rebake</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cr-rebake.cd" />
+  </ItemGroup>
+</Project>
