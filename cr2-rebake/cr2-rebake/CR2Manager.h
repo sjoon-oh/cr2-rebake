@@ -25,7 +25,7 @@ namespace cr2 {
             unsigned num_cluster = 0;
 
             // Core
-            unsigned altCountNodes(const std::vector<cr2::Edge>&); 
+			uint32_t altCountNodes(const std::vector<cr2::Edge>&);
 
 
         public:

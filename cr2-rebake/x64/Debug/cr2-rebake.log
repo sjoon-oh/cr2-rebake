@@ -1,2 +1,6 @@
-﻿  CR2Graph.cpp
+﻿  test-rebake.cpp
+c:\users\acoustikue\documents\git\cr2-rebake\cr2-rebake\cr2-accel\config.h(18): warning C4005: 'COMM_SIZE': 매크로 재정의
+  c:\users\acoustikue\documents\git\cr2-rebake\cr2-rebake\cr2-accel\partialgraph.h(9): note: 'COMM_SIZE'의 이전 정의를 참조하십시오.
+c:\users\acoustikue\documents\git\cr2-rebake\cr2-rebake\cr2-accel\cr2graph.h(69): warning C4244: '=': '__int64'에서 'uint32_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\acoustikue\documents\git\cr2-rebake\cr2-rebake\cr2-accel\cr2graph.h(79): warning C4244: '=': '__int64'에서 'uint32_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   cr2-rebake.vcxproj -> C:\Users\acoustikue\Documents\Git\cr2-rebake\x64\Debug\cr2-rebake.exe

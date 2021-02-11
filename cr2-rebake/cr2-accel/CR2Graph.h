@@ -3,8 +3,8 @@
 
 #include <algorithm>
 
-#include "SubGraph.h"
-#include "Config.h"
+#include "./SubGraph.h"
+#include "./Config.h"
 
 //#define COMM_SIZE (25318076)
 //#define COMM_SIZE (65536)

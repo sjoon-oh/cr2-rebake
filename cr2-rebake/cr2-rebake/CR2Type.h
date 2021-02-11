@@ -31,8 +31,8 @@ namespace cr2 {
         Edge(unsigned argsrc, unsigned argdst) : src_vertex(argsrc), dst_vertex(argdst) { };
 
         // Getter
-        const unsigned getSrcVertex() { return src_vertex; };
-        const unsigned getDstVertex() { return dst_vertex; };
+        const uint32_t getSrcVertex() { return src_vertex; };
+        const uint32_t getDstVertex() { return dst_vertex; };
     };
 
     // Cluster ID

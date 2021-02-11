@@ -4,7 +4,7 @@
 #include <vector>
 #include <assert.h>
 
-#include "PartialGraph.h"
+#include "./PartialGraph.h"
 
 #define COMM_SIZE (65536)
 

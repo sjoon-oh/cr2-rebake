@@ -11,7 +11,8 @@
 #ifdef CR2
 #define CONSOLE_OUT_ENABLE
 
-#define CLUSTER_SIZE ((65536)) 
+// #define CLUSTER_SIZE ((65536)) 
+#define CLUSTER_SIZE ((16)) 
 
 #define PUSH
 #define PULL

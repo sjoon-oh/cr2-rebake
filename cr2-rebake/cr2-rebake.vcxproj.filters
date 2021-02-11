@@ -57,12 +57,6 @@
     <ClInclude Include="cr2-rebake\util\CudaHelper.h">
       <Filter>cr2-rebake\util</Filter>
     </ClInclude>
-    <ClInclude Include="cr2-rebake\util\Edge.h">
-      <Filter>cr2-rebake\util</Filter>
-    </ClInclude>
-    <ClInclude Include="cr2-rebake\util\Parser.h">
-      <Filter>cr2-rebake\util</Filter>
-    </ClInclude>
     <ClInclude Include="cr2-rebake\util\platform_atomics.h">
       <Filter>cr2-rebake\util</Filter>
     </ClInclude>
@@ -90,6 +84,9 @@
     <ClInclude Include="cr2-rebake\CR2Type.h">
       <Filter>cr2-rebake</Filter>
     </ClInclude>
+    <ClInclude Include="cr2-rebake\util\CR2Parser.h">
+      <Filter>cr2-rebake\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cr2-accel\CommCR2Builder.cpp">
@@ -108,5 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cr-rebake.cd" />
+    <None Include="uk-2005-part.el" />
   </ItemGroup>
 </Project>

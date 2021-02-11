@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "Community.h"
+#include "./Community.h"
 
 typedef uint16_t DENSE_TYPE;
 

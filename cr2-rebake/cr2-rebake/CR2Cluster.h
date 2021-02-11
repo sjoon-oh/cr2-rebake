@@ -109,8 +109,9 @@ cr2::CR2Cluster<T>::CR2Cluster(uint32_t argId, uint32_t argHead, uint32_t argTai
     // To all zeros!
     num_virtual_nodes[IN] = num_virtual_nodes[OUT] = 0;
     vertex_list[IN] = vertex_list[OUT] = nullptr;
+	edge_list[IN] = edge_list[OUT] = nullptr;
 
-    for (unsigned log_deg = cr2::DEG_1; log_deg < cr2::DEG_32; log_deg++)
+    for (int log_deg = cr2::DEG_1; log_deg < cr2::DEG_32; log_deg++)
         degree_subgraph[log_deg].setDegree(log_deg);
 
     // allocate using the size
@@ -121,7 +122,7 @@ cr2::CR2Cluster<T>::CR2Cluster(uint32_t argId, uint32_t argHead, uint32_t argTai
     this->vertex_degrees[IN] = new uint32_t[num_nodes]();
     this->vertex_degrees[OUT] = new uint32_t[num_nodes]();
 
-    for (int log_deg = cr2::DEG_1; log_deg < cr2::DEG_32; log_deg++) {
+    for (int log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
 
         index_map_pos[IN][log_deg] = new uint32_t[num_nodes]();
         index_map_pos[OUT][log_deg] = new uint32_t[num_nodes]();
@@ -129,7 +130,6 @@ cr2::CR2Cluster<T>::CR2Cluster(uint32_t argId, uint32_t argHead, uint32_t argTai
         index_map_rem[IN][log_deg] = new uint32_t[num_nodes]();
         index_map_rem[OUT][log_deg] = new uint32_t[num_nodes]();
     }
-
 };
 
 template <class T>
@@ -141,7 +141,10 @@ cr2::CR2Cluster<T>::~CR2Cluster() {
     if (vertex_list[IN] != nullptr) delete[] vertex_list[IN];
     if (vertex_list[OUT] != nullptr) delete[] vertex_list[OUT];
 
-    for (unsigned log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
+	if (edge_list[IN] != nullptr) delete[] edge_list[IN];
+	if (edge_list[OUT] != nullptr) delete[] edge_list[OUT];
+
+    for (int log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
         for (unsigned direction = IN; direction <= OUT; direction++) {
 			if (index_map_pos[direction][log_deg] != nullptr) delete[] index_map_pos[direction][log_deg];
 			if (index_map_rem[direction][log_deg] != nullptr) delete[] index_map_rem[direction][log_deg];
@@ -152,7 +155,7 @@ cr2::CR2Cluster<T>::~CR2Cluster() {
 template <class T>
 unsigned cr2::CR2Cluster<T>::doReleaseLv2() {
 
-    for (unsigned log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
+    for (int log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
         for (unsigned direction = cr2::IN; direction <= cr2::OUT; direction++) {
 
             delete[] index_map_pos[direction][log_deg];
@@ -192,11 +195,12 @@ template <class T>
 unsigned cr2::CR2Cluster<T>::doRecordSingleNeighbor(uint32_t argSrc, uint32_t argDst) {
 
     // For a given degree,
-    for (unsigned log_deg = cr2::DEG_32; log_deg >= cr2::DEG_1; log_deg--) {
+    for (int log_deg = cr2::DEG_32; log_deg >= cr2::DEG_1; log_deg--) {
         // and with an incoming/outgoing direction,
-        if (index_map_rem[IN][log_deg][argDst] > 0) { // only if the remain is positive,
 
-            edge_list[IN][ index_map_pos[IN][log_deg][argDst] ] = argSrc;
+		if (index_map_rem[IN][log_deg][argDst] > 0) { // only if the remain is positive,
+			
+			edge_list[IN][index_map_pos[IN][log_deg][argDst]] = argSrc; 
             index_map_pos[IN][log_deg][argDst]++;
             index_map_rem[IN][log_deg][argDst]--;
 
@@ -241,9 +245,9 @@ unsigned cr2::CR2Cluster<T>::doBuildDegreeSubgraph() {
         num_nodes_of[OUT][cr2::DEG_32] = vertex_degrees[OUT][vertex_id] / 32;
         num_remains_of[OUT][cr2::DEG_32] = vertex_degrees[OUT][vertex_id] % 32;
 
-        for (unsigned log_deg = cr2::DEG_16; cr2::DEG_1 <= log_deg; log_deg--) {
-            // Keep dividing and store remains to propagate to the next degree-array.
+        for (int log_deg = cr2::DEG_16; int(cr2::DEG_1) <= log_deg; log_deg--) {
             
+			// Keep dividing and store remains to propagate to the next degree-array.
             num_nodes_of[IN][log_deg] = num_remains_of[IN][log_deg + 1] / POW2(log_deg);
 			num_remains_of[IN][log_deg] = num_remains_of[IN][log_deg + 1] % POW2(log_deg);
             
@@ -253,7 +257,7 @@ unsigned cr2::CR2Cluster<T>::doBuildDegreeSubgraph() {
         
         // This is the key point of all these shits.
         // Record the number of virtual nodes to each DegreeSubgraph objects.
-        for (unsigned log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
+        for (int log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
             if (num_nodes_of[IN][log_deg] != 0)
                 fetch_and_add(
                     degree_subgraph[log_deg].num_virtual_nodes[IN], num_nodes_of[IN][log_deg] );
@@ -273,7 +277,7 @@ unsigned cr2::CR2Cluster<T>::doBuildDegreeSubgraph() {
         // Record the starting point of each degree-subgraphs.
         // Recall that the structures share the same single target array: 
         //     vertex_list - The ultimate purpose of all these shits.
-        for (unsigned log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
+        for (int log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
 
             degree_subgraph[log_deg].setNodeOffset(IN, node_current[IN]); // former prefix sum
             degree_subgraph[log_deg].setEdgeOffset(IN, edge_current[IN]);
@@ -293,7 +297,7 @@ unsigned cr2::CR2Cluster<T>::doBuildDegreeSubgraph() {
     
     // Bonus Step. Record additional information such as number of virtual nodes etc.
     // Refactored - Originally countNumOfTotalEdges and countNumOfTotalVirtualNodes from PartialGraph.
-    for (unsigned log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
+    for (int log_deg = cr2::DEG_1; log_deg <= cr2::DEG_32; log_deg++) {
 
         this->num_edges 
             += (degree_subgraph[log_deg].num_virtual_nodes[IN] * POW2(log_deg));
@@ -309,6 +313,9 @@ unsigned cr2::CR2Cluster<T>::doBuildDegreeSubgraph() {
         // the number of total virtual nodes in the CR2Cluster.
     }
 
+	this->edge_list[IN] = new T[num_edges];
+	this->edge_list[OUT] = new T[num_edges];
+
     return 0;
 }
 
@@ -319,8 +326,8 @@ template <class T>
 unsigned cr2::CR2Cluster<T>::doBuildVertexList() { // Third step!!
 
     // Prepare to fight!
-    this->vertex_list[IN] = new T[num_edges];
-    this->vertex_list[OUT] = new T[num_edges];
+    this->vertex_list[IN] = new T[num_virtual_nodes[IN]];
+    this->vertex_list[OUT] = new T[num_virtual_nodes[OUT]];
 
     // Originally, PartialGraph::buildVertexIDList_in() or _out()
     // 1. For a specific vertex,
@@ -334,7 +341,7 @@ unsigned cr2::CR2Cluster<T>::doBuildVertexList() { // Third step!!
             if (vertex_degrees[direction][vertex_id] != 0) {
                 
                 // 4. iterate through the degree.
-                for (unsigned log_deg = cr2::DEG_32; log_deg >= cr2::DEG_1; log_deg--) {
+                for (int log_deg = cr2::DEG_32; log_deg >= cr2::DEG_1; log_deg--) {
 					uint32_t degree = POW2(log_deg);
                     if (current_remain >= degree) {
 
@@ -377,17 +384,20 @@ unsigned cr2::CR2Cluster<T>::doBuildVertexList() { // Third step!!
 template <class T>
 void cr2::CR2Cluster<T>::console_out_object_info() {
 
-    printf("[cr2::CR2Cluster]\n");
+    printf("cr2::CR2Cluster\n");
     printf("    id: %d\n", id);
     printf("    num_nodes: %d\n", this->num_nodes);
     printf("    num_edges: %d\n", this->num_edges);
-    printf("    num_virtual_nodes: %d\n", this->num_virtual_nodes);
+    printf("    num_virtual_nodes[IN]: %d\n", this->num_virtual_nodes[IN]);
+	printf("    num_virtual_nodes[OUT]: %d\n", this->num_virtual_nodes[OUT]);
 
-    printf("    vertex_degrees[IN]:%d\n", this->vertex_degrees);
-    for (unsigned i = 0; i < num_nodes; i++) { printf("        %5d", this->vertex_degrees[IN][i]); }
+    printf("    vertex_degrees[IN]:\n        ");
+    for (unsigned i = 0; i < num_nodes; i++) { printf("%d ", this->vertex_degrees[IN][i]); }
+	printf("\n");
 
-    printf("    vertex_degrees[OUT]:%d\n", this->vertex_degrees);
-    for (unsigned i = 0; i < num_nodes; i++) { printf("        %5d", this->vertex_degrees[OUT][i]); }
+    printf("    vertex_degrees[OUT]:\n        ");
+    for (unsigned i = 0; i < num_nodes; i++) { printf("%d ", this->vertex_degrees[OUT][i]); }
+	printf("\n");
 }
 #endif
 #endif

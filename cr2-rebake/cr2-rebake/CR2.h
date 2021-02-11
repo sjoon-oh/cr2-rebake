@@ -7,6 +7,13 @@
 #pragma once
 
 #include "./CR2Config.h"
+
+#ifdef CONSOLE_OUT_ENABLE
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#endif
+
 #include "./CR2Type.h"
 #include "./CR2DegreeSubgraph.h"
 #include "./CR2Cluster.h"

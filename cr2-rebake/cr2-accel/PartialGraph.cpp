@@ -3,8 +3,8 @@
 #include <assert.h>
 #include <math.h>
 
-#include "PartialGraph.h"
-#include "../util/platform_atomics.h"
+#include "./PartialGraph.h"
+#include "./util/platform_atomics.h"
 
 #define SM (30)
 #define POW(a, b) ((uint32_t)pow(a, b))

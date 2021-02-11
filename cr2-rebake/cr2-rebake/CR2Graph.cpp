@@ -4,7 +4,7 @@
 //
 
 #include "./CR2Cluster.h"
-#include "CR2Graph.h"
+#include "./CR2Graph.h"
 
 #include "./util/platform_atomics.h"
 
@@ -42,7 +42,7 @@ unsigned cr2::CR2Graph::doRegisterCluster(uint32_t argNumCommunity, uint32_t arg
     // The arguments are: 0 for id, 0 for starting index, and the argNumNodes - 1 for last index.
     inter_cluster = new cr2::CR2Cluster<cr2::SPARSE_TYPE>(0, 0, argNumNodes - 1);
 
-    this->num_nodes = argNumCommunity; // Register member
+    this->num_nodes = argNumNodes; // Register member
     return 0;
 };
 
@@ -69,24 +69,24 @@ unsigned cr2::CR2Graph::doRegisterEdge(const std::vector<cr2::Edge>& argEdgeList
                 CLUSTER_INNER_IDX(src), CLUSTER_INNER_IDX(dst)
             );
     } // so far, refactored former CommCSRBuilder::countDegrees
-
+	
 
     // Next, register degree-subgraphs and do vertex split.
     // Make seats for the vertex!!
     inter_cluster->doBuildDegreeSubgraph();
     inter_cluster->doBuildVertexList(); // Vertex Splitting
-
+	
     for (auto& ic: this->intra_cluster) {
         ic->doBuildDegreeSubgraph();   
         ic->doBuildVertexList(); // Vertex Splitting
     } // so far, refactored former splitNodes()
-
+	
     // Final step: Insert neighbors to the clusters, where seats are ready. 
     for (auto it: argEdgeList) {
 
-        cr2::EDGE src = it.getSrcVertex();
-        cr2::EDGE dst = it.getDstVertex();
-        
+        cr2::NODE src = it.getSrcVertex();
+        cr2::NODE dst = it.getDstVertex();
+		
         if (IS_SAME_CLUSTER(src, dst)) // In case if it belongs to same cluster,
             this->intra_cluster[CLUSTER_ID(src)]->doRecordSingleNeighbor(
                 CLUSTER_INNER_IDX(src), CLUSTER_INNER_IDX(dst)
@@ -97,7 +97,7 @@ unsigned cr2::CR2Graph::doRegisterEdge(const std::vector<cr2::Edge>& argEdgeList
                 CLUSTER_INNER_IDX(src), CLUSTER_INNER_IDX(dst)
             );
     } // so far, refactored former CommCSRBuilder::buildNeighborList
-
+	
     // When arranging, the addtional map_ variables were allocated to the heap.
     // The map_ array is the identical one with the former edge_position and remains_ series.
     //
@@ -149,9 +149,10 @@ unsigned cr2::CR2Graph::doRelease() {
 #ifdef CONSOLE_OUT_ENABLE // Debugging purpose
 void cr2::CR2Graph::console_out_object_info() {
 
-    printf("[cr2::CR2Graph]\n");
+    printf("cr2::CR2Graph\n");
     printf("    num_nodes: %d\n", num_nodes);
-    printf("    num_edges: %d\n", num_nodes);
-    // printf("    num_intra_cluster: %d\n");
+    printf("    num_edges: %d\n", num_edges);
+	printf("    num_cluster: %d\n", num_cluster);
+    printf("    num_intra_cluster: %d\n", num_intra_cluster);
 }
 #endif

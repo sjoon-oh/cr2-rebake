@@ -1,4 +1,157 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Comment CommentText="namespace cr2">
+    <Position X="0.5" Y="4.594" Height="0.291" Width="1.343" />
+  </Comment>
+  <Comment CommentText="getters and setters are exempt from the diagram">
+    <Position X="0.5" Y="8.813" Height="0.291" Width="3.208" />
+  </Comment>
+  <Class Name="cr2::CR2Subgraph">
+    <Position X="11.5" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAQCAAAAAABEAAAAARAAAQAAgEAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2DegreeSubgraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2DegreeSubgraph">
+    <Position X="11.5" Y="12.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAQAAABAAAAAAEAAAAAAAAEAAABEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2DegreeSubgraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Graph" Collapsed="true">
+    <Position X="5.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEgAwAkEEAAEIAAAAJIAEAAQIEAAAACUQAUAAEAJA=</HashCode>
+      <FileName>cr2-rebake\CR2Graph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Manager">
+    <Position X="0.5" Y="12.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAgCAAAAQEAAAAAIAIEAAAIAAAECAAAQAQAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Manager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::Edge" Collapsed="true">
+    <Position X="5.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAgAAAABRAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Parser">
+    <Position X="0.5" Y="9.5" Width="2.5" />
+    <NestedTypes>
+      <Typedef Name="cr2::CR2Parser::EdgeList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>cr2-rebake\util\CR2Parser.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAEQIAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>cr2-rebake\util\CR2Parser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommCSRBuilder" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAQIAAAgABAAAAAAAAAAAAEAQAAACAAAAAAEA=</HashCode>
+      <FileName>cr2-accel\CommCR2Builder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Community" Collapsed="true">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAoQABAAIAAARmAAiAAAECAgAAAQwBAQAAAJBIBhA=</HashCode>
+      <FileName>cr2-accel\Community.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CR2Graph" Collapsed="true">
+    <Position X="18.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwBAACAAAIAAiEOBCEAQgAmIEgiAAQRQgEAHU0AAhBo=</HashCode>
+      <FileName>cr2-accel\CR2Graph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DenseGraph" Collapsed="true">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>sAAAAQAAkYABBAQhAACgAAEaAgAAAAgBAAAAkJAQAhA=</HashCode>
+      <FileName>cr2-accel\SubGraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartialGraph" Collapsed="true">
+    <Position X="16.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>NBABAYgAgRJAIDZVDICpoGOaAkJAAUQAQUEWFJECBhg=</HashCode>
+      <FileName>cr2-accel\PartialGraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SparseGraph" Collapsed="true">
+    <Position X="18.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAIQAAAAAAAATAAAiAAAECAgCAAAgAAQAAAJBIBhA=</HashCode>
+      <FileName>cr2-accel\SubGraph.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Edge" Collapsed="true">
+    <Position X="21" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAADgAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-accel\util\Edge.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cr2::CR2Cluster&lt;T&gt;">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCFIACBAkACAYAEAABACIAAEAAAAAAAADAQAADAAAiQ=</HashCode>
+      <FileName>cr2-rebake\CR2Cluster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="cr2::DENSE_TYPE" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cr2::SPARSE_TYPE" Collapsed="true">
+    <Position X="0.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cr2::NODE" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="cr2::EDGE" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="cr2::DEGREE">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAEAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="cr2::DIR">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cr2-rebake\CR2Type.h</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="맑은 고딕" Size="9" />
 </ClassDiagram>

@@ -81,7 +81,7 @@ namespace cr2 {
 				return sum;
 			}
 			uint32_t getNumInterClusterVirtualNodes(unsigned argDir) {
-				this->inter_cluster->getNumVirtualNodes(argDir);
+				return this->inter_cluster->getNumVirtualNodes(argDir);
 			}
 
 			uint32_t* getDegreeList(unsigned argDir) {

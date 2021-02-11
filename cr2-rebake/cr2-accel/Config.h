@@ -14,7 +14,8 @@ typedef uint32_t SPARSE_TYPE;
 #define NUM_OF_NODES (512)
 
 //#define COMM_SIZE ((4294967296))
-#define COMM_SIZE ((65536))
+// #define COMM_SIZE ((65536))
+#define COMM_SIZE ((16))
 //#define COMM_SIZE (5242880)
 //#define COMM_SIZE (1048576)
 

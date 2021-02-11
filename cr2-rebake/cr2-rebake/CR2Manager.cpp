@@ -13,8 +13,8 @@
 //
 // Finds the maximum vertex id, which becomes the (total number of edges - 1).
 // arg: const std::vector<cr2::Edge>&
-unsigned cr2::CR2Manager::altCountNodes(const std::vector<cr2::Edge>& argEdgeList) {
-    unsigned num_nodes = 0;
+uint32_t cr2::CR2Manager::altCountNodes(const std::vector<cr2::Edge>& argEdgeList) {
+	uint32_t num_nodes = 0;
 
     #pragma omp parallel for reduction(max : num_nodes)
     for (auto it: argEdgeList) {
@@ -22,7 +22,7 @@ unsigned cr2::CR2Manager::altCountNodes(const std::vector<cr2::Edge>& argEdgeLis
         num_nodes = std::max(num_nodes, it.getDstVertex());
     }
 
-    return 0;
+    return num_nodes;
 };
 
 
@@ -48,8 +48,9 @@ cr2::CR2Graph* cr2::CR2Manager::doBuild(const std::vector<cr2::Edge>& argEdgeLis
 
     // cr2_graph->setNumNodes(num_original_nodes);
     // automatically records num_nodes of cr2_graph.
-    cr2_graph->setNumEdges(num_edges);
-    cr2_graph->setNumIntraCluster(num_cluster);
+
+    cr2_graph->setNumEdges(this->num_edges);
+    cr2_graph->setNumIntraCluster(this->num_cluster);
 
     // Generate the range of communities, not yet graph inserted.
     // Former DenseGraph/SparseGraph ctor.
@@ -76,7 +77,7 @@ unsigned cr2::CR2Manager::doReset() {
 // Debugging purpose
 void cr2::CR2Manager::console_out_object_info() {
 
-    printf("[cr2::CR2Manager]\n");
+    printf("cr2::CR2Manager\n");
     printf("    cr2_graph: %p\n", cr2_graph);
     printf("    num_original_nodes: %d\n", num_original_nodes);
     printf("    num_edges: %d\n", num_edges);

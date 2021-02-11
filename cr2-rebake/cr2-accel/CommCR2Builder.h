@@ -3,9 +3,9 @@
 
 #include <vector>
 
-#include "../util/Edge.h"
-#include "CR2Graph.h"
-#include "Community.h"
+#include "./util/Edge.h"
+#include "./CR2Graph.h"
+#include "./Community.h"
 
 // class for building std::vector<Communtiy>-centric CSR representation
 //

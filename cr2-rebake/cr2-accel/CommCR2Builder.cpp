@@ -2,15 +2,19 @@
 //#include <parallel/algorithm>
 #include <set>
 
-#include "SubGraph.h"
-#include "CommCR2Builder.h"
-#include "CR2Graph.h"
+#include "./SubGraph.h"
+#include "./CommCR2Builder.h"
+#include "./CR2Graph.h"
 
 CR2Graph* CommCSRBuilder::buildCR2(const std::vector<Edge>& edgeList) {
   numOfNodes = countNumOfNodes(edgeList) + 1;
   numOfEdges = edgeList.size();
   numOfComms = (numOfNodes % COMM_SIZE != 0) ? numOfNodes / COMM_SIZE + 1 : 
                                                numOfNodes / COMM_SIZE;
+
+  printf("numPfNodes: %d\n", numOfNodes);
+  printf("numOfEdges: %d\n", numOfEdges);
+  printf("numOfComms: %d\n", numOfComms);
 
   DenseGraph* denseGraph = new DenseGraph(numOfComms, numOfNodes);
   SparseGraph* sparseGraph = new SparseGraph(numOfNodes);
