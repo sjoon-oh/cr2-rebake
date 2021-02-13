@@ -12,10 +12,10 @@
 #include "./cr2-rebake/CR2.h" // one and only header?
 
  // Original project
-#include "./cr2-accel/util/Parser.h"
-#include "./cr2-accel/CR2Graph.h"
-#include "./cr2-accel/CommCR2Builder.h"
-#include "./cr2-accel/Community.h" 
+//#include "./cr2-accel/util/Parser.h"
+//#include "./cr2-accel/CR2Graph.h"
+//#include "./cr2-accel/CommCR2Builder.h"
+//#include "./cr2-accel/Community.h" 
 
 
 // option
